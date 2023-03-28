@@ -29,9 +29,7 @@ public class Client {
             Callable<Integer> task = () -> {
                 int delay = new Random().nextInt(901) + 100;
                 Thread.sleep(delay);
-                System.err.println("Sending request " + request + " to server and delay " + delay + "ms");
                 int responseSize = server.processRequest(request);
-                System.err.println("Received response " + responseSize + " from server");
                 return responseSize;
             };
             Future<Integer> future = executorService.submit(task);
@@ -48,5 +46,6 @@ public class Client {
     public List<Integer> getResponses() {
         return responses;
     }
+
 }
 

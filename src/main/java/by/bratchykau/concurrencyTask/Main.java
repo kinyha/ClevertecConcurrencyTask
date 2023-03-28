@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.concurrent.ExecutionException;
 
 public class Main {
+    //main like integration test
     public static void main(String[] args) throws InterruptedException, ExecutionException {
         int n = 100;
         Server server = new Server(n);

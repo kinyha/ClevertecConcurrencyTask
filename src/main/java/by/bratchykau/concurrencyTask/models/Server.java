@@ -9,7 +9,7 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 public class Server {
-    private List<Integer> sharedResource;
+    List<Integer> sharedResource;
     private int n;
 
     private Lock lock;
@@ -48,6 +48,9 @@ public class Server {
     }
 
     public static int calculateExpectedAccumulator(int n) {
+        if (n == 1) {
+            return 1;
+        }
         return (1 + n) * (n / 2);
     }
 }
